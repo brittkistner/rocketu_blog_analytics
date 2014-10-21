@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>My Blog</title>
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        {% block header %}{% endblock header %}
+    </head>
+    <body>
+        <div class="header">
+            <ul class="nav nav-pills pull-right">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'blog' %}">Blog</a></li>
+            </ul>
+            <h3 class="text-muted">Analytics Report</h3>
+        </div>
+        <hr>
+        <div class="container">
+            {% block main %}{% endblock main %}
+        </div>
+        <div class="footer">
+            <p>&copy; Analytics Report 2014</p>
+        </div>
+    </body>
+</html>

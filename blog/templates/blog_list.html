@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    {% for post in posts %}
+        <h4>{{ post.title }}</h4>
+        <div>by {{ post.author }} on {{ post.created }}</div>
+        <a href="{% url 'post' post.pk %}">Read it!</a>
+    {% endfor %}
+{% endblock main %}

@@ -1,0 +1,18 @@
+{% extends 'base_analytics.html' %}
+
+{% block main %}
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed">
+        <tr>
+            <th>Page Link</th>
+            <th> Number of Times Visited</th>
+        </tr>
+        {% for page in pages %}
+            <tr>
+                <td>{{ page }}</td>
+                <td><a href="{% url 'detail_view' page.id %}">{{ page.views.count }}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock main %}

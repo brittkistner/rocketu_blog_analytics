@@ -1,0 +1,40 @@
+{% extends 'base_analytics.html' %}
+
+{% block header %}
+<meta charset=utf-8 />
+<title>A simple map</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.2/mapbox.css' rel='stylesheet' />
+<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; height: 100%; }
+{#  #map { position:absolute; width:100%;}#}
+</style>
+{% endblock header %}
+{% block main %}
+<div id='map'></div>
+<script>
+L.mapbox.accessToken = 'pk.eyJ1IjoiYmtpc3RuZXIiLCJhIjoiN2I1M0stSSJ9.KuFhmem-2ZN4Q6LddSUgiQ';
+var map = L.mapbox.map('map', 'bkistner.k0m7ndk8')
+    .setView([37, -122], 5);
+{% for view, view_count  in view_and_count.iteritems %}
+L.mapbox.featureLayer({
+    type: 'Feature',
+    geometry: {
+        type: 'Point',
+        coordinates: [
+            {{ view.longitude }},
+            {{ view.latitude }}
+        ]
+    },
+    properties: {
+        title: "{{ view_count }}",
+        'marker-color': '#548cba',
+        'marker-size': 'small',
+        'marker-symbol': 'ferry'
+    }
+}).addTo(map);
+{% endfor %}
+</script>
+{% endblock main %}
