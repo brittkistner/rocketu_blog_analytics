@@ -1,0 +1,7 @@
+---
+
+db_name: "blog_analytics"
+db_user: "blog_analytics"
+db_password: "hello"
+nginx_server_name: "ec2-54-173-21-90.compute-1.amazonaws.com"
+django_settings_file: rocketu_blog_analytics.settings
