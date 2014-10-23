@@ -56,7 +56,7 @@
                     <h4>Blog Posts</h4>
                     <div>
                         {% for tag in tags %}
-                            <p><a href="{% url 'list_posts' tag.id %}"> {{ tag.name }} ({{tag.posts.count}})</a></p>
+                            <p><a id="{{ tag.name }}" class="side_tag" href="{% url 'list_posts' tag.id %}"> {{ tag.name }} ({{tag.posts.count}})</a></p>
                         {% endfor %}
                     </div>
                 </div>
