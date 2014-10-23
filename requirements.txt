@@ -4,7 +4,9 @@ Jinja2==2.7.3
 MarkupSafe==0.23
 Pillow==2.6.1
 PyYAML==3.11
+WebOb==1.4
 ansible==1.7.2
+appenlight-client==0.6.10
 django-ipware==0.1.0
 django-localflavor==1.0
 ecdsa==0.11
