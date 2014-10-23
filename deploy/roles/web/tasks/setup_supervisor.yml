@@ -14,3 +14,6 @@
 
 - name: Restart Supervisor
   supervisorctl: name={{ project_name }} state=restarted
+
+- name: Restart Supervisor Service
+  service: name=supervisor state=restarted
