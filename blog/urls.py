@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^blog/$', 'blog.views.blog', name='blog'),
     url(r'^blog/(\d+)/$', 'blog.views.post', name='post'),
     url(r'^list_posts/(\d+)/$', 'blog.views.list_posts', name='list_posts'),
+
 )
 
 if settings.DEBUG:
